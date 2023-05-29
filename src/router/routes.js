@@ -1,7 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const datosRoutes = require('./data-search');
+const publicRoute = require('./public');
+const privateRoute = require('./private');
+const apiRoute = require('./api');
 
-router.use('/', datosRoutes);
+router.use('/', publicRoute);
+router.use('/', privateRoute);
+router.use('/api', apiRoute);
 
 module.exports = router;

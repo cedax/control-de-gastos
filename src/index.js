@@ -1,14 +1,14 @@
-const app = require('./app');
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 require('dotenv').config();
+
+const app = require('./app');
 
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
 	console.log(`Servidor iniciado en el puerto ${port}`);
 });
-
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 
 const firebaseConfig = {
 	apiKey: process.env.API_KEY,
